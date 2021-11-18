@@ -14,7 +14,7 @@
 #define SIGMINUS		SIGRTMIN
 #endif
 #define LENGTH(X)               (sizeof(X) / sizeof (X[0]))
-#define CMDLENGTH		50
+#define CMDLENGTH		100
 #define MIN( a, b ) ( ( a < b) ? a : b )
 #define STATUSLENGTH (LENGTH(blocks) * CMDLENGTH + 1)
 
@@ -118,10 +118,12 @@ void setupsignals()
 int getstatus(char *str, char *last)
 {
 	strcpy(last, str);
-	str[0] = '\0';
+	str[0] = ' ';
+	str[1] = '\0';
 	for (unsigned int i = 0; i < LENGTH(blocks); i++)
 		strcat(str, statusbar[i]);
-	str[strlen(str)-strlen(delim)] = '\0';
+	str[strlen(str)-strlen(delim)] = ' ';
+	str[strlen(str)-strlen(delim) + 1] = '\0';
 	return strcmp(str, last);//0 if they are the same
 }
 
