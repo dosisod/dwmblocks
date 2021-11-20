@@ -2,9 +2,9 @@
 static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
 
-	{"", "date '+%b %-d %-l:%M'", 5, 0},
-	{"", "cat /tmp/current_song 2>/dev/null | sed 's/....$//'", 1, 0},
 	{"", "cat /tmp/timer 2>/dev/null", 1, 0},
+	{"", "cat /tmp/current_song 2>/dev/null | sed 's/....$//'", 1, 0},
+	{"", "date '+%b %-d %-l:%M'", 5, 0},
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.
