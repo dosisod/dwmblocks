@@ -4,7 +4,7 @@ static const Block blocks[] = {
 
 	{"", "cat /tmp/timer 2>/dev/null", 1, 0},
 	{"", "cat /tmp/current_song 2>/dev/null | sed 's/....$//'", 1, 0},
-	{"", "[ -f /tmp/current_playlist ] && find \"$(cat /tmp/current_playlist)\" -printf ' %f'", 1, 0},
+	{"", "[ -f /tmp/current_playlist ] && basename \"$(cat /tmp/current_playlist)\" | sed -e 's/|//g' -e 's/^/ /'", 1, 0},
 	{"", "date '+%a %b %-d %-H:%M'", 5, 0},
 };
 
