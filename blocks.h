@@ -5,7 +5,7 @@ static const Block blocks[] = {
 	{"", "cat /tmp/timer 2>/dev/null", 1, 0},
 	{"", "cat /tmp/current_song 2>/dev/null | sed 's/....$//'", 1, 0},
 	{"", "[ -f /tmp/current_playlist ] && basename \"$(cat /tmp/current_playlist)\" | sed -e 's/|//g' -e 's/^/ /'", 1, 0},
-	{"", "date '+%a %b %-d %-H:%M'", 5, 0},
+	{"", "date '+%a %b %-d %H:%M'", 5, 0},
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.
