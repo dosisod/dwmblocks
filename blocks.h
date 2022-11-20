@@ -2,6 +2,7 @@
 static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
 
+	{"", "[ -f /tmp/stopwatch ] && date -u --date=\"@$(cat /tmp/stopwatch)\" +%T", 1, 0},
 	{"", "cat /tmp/timer 2>/dev/null", 1, 0},
 	{"", "cat /tmp/current_song 2>/dev/null | sed 's/....$//'", 1, 0},
 	{"", "[ -f /tmp/current_playlist ] && basename \"$(cat /tmp/current_playlist)\" | sed -e 's/|//g' -e 's/^/ /'", 1, 0},
